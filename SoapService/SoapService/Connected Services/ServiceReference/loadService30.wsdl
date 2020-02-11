@@ -1,0 +1,752 @@
+<?xml version="1.0" encoding="utf-8"?>
+<wsdl:definitions xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:sch="http://com.pls.load/loadService_30" xmlns:tns="http://com.pls.load/loadService_30" targetNamespace="http://com.pls.load/loadService_30" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+  <wsdl:types>
+    <xsd:schema xmlns="http://com.pls.load/loadService_30" attributeFormDefault="unqualified" elementFormDefault="qualified" targetNamespace="http://com.pls.load/loadService_30" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+      <xsd:element name="createLoad30Request">
+        <xsd:complexType>
+          <xsd:sequence>
+            <xsd:element xmlns:q1="http://com.pls.load/loadService_30" name="loadDTO" type="q1:loadDTO" />
+          </xsd:sequence>
+        </xsd:complexType>
+      </xsd:element>
+      <xsd:element name="createLoad30Response">
+        <xsd:complexType>
+          <xsd:sequence>
+            <xsd:element name="Response" type="xsd:string" />
+            <xsd:element name="LoadId" type="xsd:string" />
+          </xsd:sequence>
+        </xsd:complexType>
+      </xsd:element>
+      <xsd:element name="loadDTO" type="tns:loadDTO" />
+      <xsd:complexType name="loadDTO">
+        <xsd:sequence>
+          <xsd:element minOccurs="0" name="accessorialsTotal" type="xsd:decimal" />
+          <xsd:element minOccurs="0" name="actualRevenuePrice" type="xsd:decimal" />
+          <xsd:element minOccurs="0" name="actualWeight" type="xsd:decimal" />
+          <xsd:element minOccurs="0" name="axLoadId" type="xsd:string" />
+          <xsd:element name="batchBilling" type="xsd:boolean" />
+          <xsd:element minOccurs="0" name="batchNumber" type="xsd:string" />
+          <xsd:element minOccurs="0" name="billingStatus" type="tns:billingStatus" />
+          <xsd:element minOccurs="0" maxOccurs="unbounded" name="costPricings" nillable="true" type="tns:loadPricingDTO" />
+          <xsd:element name="costVerificationApproved" type="xsd:short" />
+          <xsd:element minOccurs="0" name="currentDate" type="xsd:string" />
+          <xsd:element minOccurs="0" name="customer" type="tns:customerDTO" />
+          <xsd:element minOccurs="0" name="customerBillToAddress" type="tns:customerBillToAddressDTO" />
+          <xsd:element minOccurs="0" name="customerContact" type="tns:customerContactDTO" />
+          <xsd:element minOccurs="0" name="customerLocation" type="tns:customerLocationDTO" />
+          <xsd:element minOccurs="0" maxOccurs="unbounded" name="customerRequiredFields" nillable="true" type="tns:invoiceRequiredFieldDTO" />
+          <xsd:element name="cwtApproved" type="xsd:short" />
+          <xsd:element name="day" type="xsd:boolean" />
+          <xsd:element minOccurs="0" name="destinationStateCode" type="xsd:string" />
+          <xsd:element minOccurs="0" name="dnltDate" type="xsd:dateTime" />
+          <xsd:element name="edi" type="xsd:boolean" />
+          <xsd:element minOccurs="0" name="equipment" type="tns:lookupDTO" />
+          <xsd:element minOccurs="0" name="exceptionOverridden" type="xsd:boolean" />
+          <xsd:element name="freightApproved" type="xsd:short" />
+          <xsd:element minOccurs="0" name="frtBillReceivedDate" type="xsd:dateTime" />
+          <xsd:element minOccurs="0" name="fuelTotal" type="xsd:decimal" />
+          <xsd:element minOccurs="0" name="grandFuelTotal" type="xsd:decimal" />
+          <xsd:element minOccurs="0" name="grandLinehaulTotal" type="xsd:decimal" />
+          <xsd:element minOccurs="0" name="grandTotal" type="xsd:decimal" />
+          <xsd:element minOccurs="0" name="id" type="xsd:long" />
+          <xsd:element minOccurs="0" name="inBoundOutBound" type="xsd:string" />
+          <xsd:element minOccurs="0" name="invoiceCover" type="xsd:string" />
+          <xsd:element minOccurs="0" name="invoiceNumber" type="xsd:string" />
+          <xsd:element minOccurs="0" name="isInvoiceAdjustmentRequested" type="xsd:boolean" />
+          <xsd:element minOccurs="0" name="isInvoiceProcessed" type="xsd:boolean" />
+          <xsd:element minOccurs="0" name="isOutbound" type="xsd:boolean" />
+          <xsd:element minOccurs="0" name="isPricingChanged" type="xsd:boolean" />
+          <xsd:element minOccurs="0" name="isRateConfirmed" type="xsd:boolean" />
+          <xsd:element minOccurs="0" name="linehaulTotal" type="xsd:decimal" />
+          <xsd:element name="loadAdjustmentRequest" type="xsd:short" />
+          <xsd:element minOccurs="0" name="loadCarrier" type="tns:loadCarrierDTO" />
+          <xsd:element minOccurs="0" maxOccurs="unbounded" name="loadCarriers" nillable="true" type="tns:loadCarrierDTO" />
+          <xsd:element minOccurs="0" maxOccurs="unbounded" name="loadCommodities" nillable="true" type="tns:loadCommodityDTO" />
+          <xsd:element minOccurs="0" name="loadCount" type="xsd:long" />
+          <xsd:element minOccurs="0" name="loadDeliveryReminder" type="tns:loadDeliveryRemindersDTO" />
+          <xsd:element minOccurs="0" maxOccurs="unbounded" name="loadNotes" nillable="true" type="tns:loadNotesDTO" />
+          <xsd:element minOccurs="0" name="loadOriginDestination" type="tns:loadOriginDestDTO" />
+          <xsd:element minOccurs="0" maxOccurs="unbounded" name="loadPostModal" nillable="true" type="tns:loadPostModalDTO" />
+          <xsd:element minOccurs="0" maxOccurs="unbounded" name="loadPricings" nillable="true" type="tns:loadPricingDTO" />
+          <xsd:element minOccurs="0" maxOccurs="unbounded" name="loadReferenceFields" nillable="true" type="tns:loadReferenceFieldsDTO" />
+          <xsd:element minOccurs="0" maxOccurs="unbounded" name="loadServiceTypes" nillable="true" type="tns:loadServiceTypeDTO" />
+          <xsd:element minOccurs="0" name="loadSize" type="xsd:string" />
+          <xsd:element minOccurs="0" name="loadSizeValue" type="xsd:decimal" />
+          <xsd:element minOccurs="0" name="loadStatus" type="tns:loadStatusDTO" />
+          <xsd:element minOccurs="0" name="loadStatusBeforePickup" type="xsd:long" />
+          <xsd:element minOccurs="0" name="loadStatusOnCancel" type="tns:loadStatusDTO" />
+          <xsd:element minOccurs="0" maxOccurs="unbounded" name="loadStopoffs" nillable="true" type="tns:loadStopoffDTO" />
+          <xsd:element minOccurs="0" maxOccurs="unbounded" name="loadTrackingNotes" nillable="true" type="tns:loadTrackingNoteDTO" />
+          <xsd:element minOccurs="0" name="marginApproved" type="xsd:short" />
+          <xsd:element name="missingPagesApproved" type="xsd:short" />
+          <xsd:element minOccurs="0" name="movementType" type="xsd:string" />
+          <xsd:element minOccurs="0" maxOccurs="unbounded" name="notes" nillable="true" type="tns:allNotesDTO" />
+          <xsd:element minOccurs="0" name="openMarketEndDate" type="xsd:dateTime" />
+          <xsd:element minOccurs="0" name="openMarketPeriod" type="xsd:string" />
+          <xsd:element minOccurs="0" name="originStateCode" type="xsd:string" />
+          <xsd:element minOccurs="0" name="paperWorkApproved" type="xsd:short" />
+          <xsd:element name="pickupApproved" type="xsd:short" />
+          <xsd:element name="post" type="xsd:boolean" />
+          <xsd:element minOccurs="0" name="ppdCol" type="xsd:string" />
+          <xsd:element minOccurs="0" name="pricingCostTotal" type="xsd:decimal" />
+          <xsd:element minOccurs="0" name="pricingMarginPercentage" type="xsd:decimal" />
+          <xsd:element minOccurs="0" name="pricingMax" type="xsd:decimal" />
+          <xsd:element minOccurs="0" name="pricingRevenueTotal" type="xsd:decimal" />
+          <xsd:element minOccurs="0" name="pricingTarget" type="xsd:decimal" />
+          <xsd:element minOccurs="0" name="purchaseOrder" type="xsd:string" />
+          <xsd:element minOccurs="0" name="quickPostQuantity" type="xsd:int" />
+          <xsd:element name="ratesApproved" type="xsd:short" />
+          <xsd:element minOccurs="0" name="referenceNumber" type="xsd:string" />
+          <xsd:element name="remitToZipApproved" type="xsd:short" />
+          <xsd:element name="requiredFieldsApproved" type="xsd:short" />
+          <xsd:element minOccurs="0" maxOccurs="unbounded" name="revenuePricings" nillable="true" type="tns:loadPricingDTO" />
+          <xsd:element name="salesOrderPosted" type="xsd:boolean" />
+          <xsd:element name="saveDestAddressToAddressBook" type="xsd:boolean" />
+          <xsd:element name="saveOriginAddressToAddressBook" type="xsd:boolean" />
+          <xsd:element name="saveStopoffsAddressToAddressBook" type="xsd:boolean" />
+          <xsd:element name="saveToAddressBook" type="xsd:boolean" />
+          <xsd:element name="scacApproved" type="xsd:short" />
+          <xsd:element minOccurs="0" name="shipmentNumber" type="xsd:string" />
+          <xsd:element name="systematicLoadPriceApproved" type="xsd:short" />
+          <xsd:element minOccurs="0" name="totalLoad" type="xsd:decimal" />
+          <xsd:element minOccurs="0" name="totalWeight" type="xsd:decimal" />
+          <xsd:element name="verifiedFieldApproved" type="xsd:short" />
+        </xsd:sequence>
+      </xsd:complexType>
+      <xsd:complexType name="billingStatus">
+        <xsd:complexContent mixed="false">
+          <xsd:extension base="tns:typeBase">
+            <xsd:sequence />
+          </xsd:extension>
+        </xsd:complexContent>
+      </xsd:complexType>
+      <xsd:complexType name="typeBase" abstract="true">
+        <xsd:complexContent mixed="false">
+          <xsd:extension base="tns:operableBase">
+            <xsd:sequence>
+              <xsd:element minOccurs="0" name="description" type="xsd:string" />
+              <xsd:element minOccurs="0" name="name" type="xsd:string" />
+            </xsd:sequence>
+          </xsd:extension>
+        </xsd:complexContent>
+      </xsd:complexType>
+      <xsd:complexType name="operableBase">
+        <xsd:sequence>
+          <xsd:element minOccurs="0" name="active" type="xsd:boolean" />
+        </xsd:sequence>
+      </xsd:complexType>
+      <xsd:complexType name="loadPricingDTO">
+        <xsd:sequence>
+          <xsd:element minOccurs="0" name="accessorialTypes" type="tns:lookupDTO" />
+          <xsd:element minOccurs="0" name="adjustmentId" type="xsd:long" />
+          <xsd:element minOccurs="0" name="id" type="xsd:long" />
+          <xsd:element minOccurs="0" name="index" type="xsd:int" />
+          <xsd:element minOccurs="0" name="lhPercentCalcValue" type="xsd:decimal" />
+          <xsd:element minOccurs="0" name="minimum" type="xsd:decimal" />
+          <xsd:element minOccurs="0" name="pricingLineItem" type="tns:lookupDTO" />
+          <xsd:element minOccurs="0" name="pricingLineItemSubtotal" type="xsd:decimal" />
+          <xsd:element minOccurs="0" name="pricingLineItemType" type="tns:lookupDTO" />
+          <xsd:element minOccurs="0" name="pricingLineItemValue" type="xsd:decimal" />
+          <xsd:element minOccurs="0" name="pricingType" type="tns:lookupDTO" />
+        </xsd:sequence>
+      </xsd:complexType>
+      <xsd:complexType name="lookupDTO">
+        <xsd:sequence>
+          <xsd:element minOccurs="0" name="id" type="xsd:string" />
+          <xsd:element minOccurs="0" name="name" type="xsd:string" />
+        </xsd:sequence>
+      </xsd:complexType>
+      <xsd:complexType name="customerDTO">
+        <xsd:sequence>
+          <xsd:element minOccurs="0" name="companyName" type="xsd:string" />
+          <xsd:element minOccurs="0" maxOccurs="unbounded" name="contacts" nillable="true" type="tns:customerContactDTO" />
+          <xsd:element minOccurs="0" maxOccurs="unbounded" name="customerAddresses" nillable="true" type="tns:customerAddresses" />
+          <xsd:element minOccurs="0" name="id" type="xsd:long" />
+          <xsd:element minOccurs="0" name="shipsFrequently" type="xsd:boolean" />
+        </xsd:sequence>
+      </xsd:complexType>
+      <xsd:complexType name="customerContactDTO">
+        <xsd:sequence>
+          <xsd:element minOccurs="0" name="contactDetails" type="xsd:string" />
+          <xsd:element minOccurs="0" name="contactEmailId" type="xsd:string" />
+          <xsd:element minOccurs="0" name="contactFax" type="xsd:long" />
+          <xsd:element minOccurs="0" name="contactFirstName" type="xsd:string" />
+          <xsd:element minOccurs="0" name="contactFullName" type="xsd:string" />
+          <xsd:element minOccurs="0" name="contactLastName" type="xsd:string" />
+          <xsd:element minOccurs="0" name="contactPhone" type="xsd:long" />
+          <xsd:element minOccurs="0" name="isActive" type="xsd:boolean" />
+        </xsd:sequence>
+      </xsd:complexType>
+      <xsd:complexType name="customerAddresses">
+        <xsd:complexContent mixed="false">
+          <xsd:extension base="tns:auditableBase">
+            <xsd:sequence>
+              <xsd:element minOccurs="0" name="customerName" type="xsd:string" />
+              <xsd:element minOccurs="0" name="companyName" type="xsd:string" />
+              <xsd:element minOccurs="0" name="companySite" type="xsd:string" />
+              <xsd:element minOccurs="0" name="companyFax" type="xsd:long" />
+              <xsd:element minOccurs="0" name="companyPhone" type="xsd:long" />
+              <xsd:element minOccurs="0" name="addressType" type="xsd:string" />
+              <xsd:element minOccurs="0" name="addressPrimary" type="xsd:string" />
+              <xsd:element minOccurs="0" name="addressSecondary" type="xsd:string" />
+              <xsd:element minOccurs="0" name="city" type="xsd:string" />
+              <xsd:element minOccurs="0" name="state" type="xsd:string" />
+              <xsd:element minOccurs="0" name="zipcode" type="xsd:string" />
+              <xsd:element minOccurs="0" name="country" type="xsd:string" />
+              <xsd:element minOccurs="0" name="shippingHourFrom" type="xsd:dateTime" />
+              <xsd:element minOccurs="0" name="shippingHourTo" type="xsd:dateTime" />
+              <xsd:element minOccurs="0" name="receivingHourFrom" type="xsd:dateTime" />
+              <xsd:element minOccurs="0" name="receivingHourTo" type="xsd:dateTime" />
+              <xsd:element minOccurs="0" name="pickupNotes" type="xsd:string" />
+              <xsd:element minOccurs="0" name="deliveryNotes" type="xsd:string" />
+              <xsd:element minOccurs="0" name="internalPickupNotes" type="xsd:string" />
+              <xsd:element minOccurs="0" name="internalDeliveryNotes" type="xsd:string" />
+              <xsd:element minOccurs="0" name="addressCode" type="xsd:string" />
+              <xsd:element minOccurs="0" name="isActive" type="xsd:boolean" />
+              <xsd:element minOccurs="0" name="customer" type="tns:customer" />
+              <xsd:element minOccurs="0" maxOccurs="unbounded" name="customerAddressContacts" nillable="true" type="tns:customerAddressContactDetail" />
+            </xsd:sequence>
+          </xsd:extension>
+        </xsd:complexContent>
+      </xsd:complexType>
+      <xsd:complexType name="auditableBase" abstract="true">
+        <xsd:sequence />
+      </xsd:complexType>
+      <xsd:complexType name="customer">
+        <xsd:complexContent mixed="false">
+          <xsd:extension base="tns:auditableBase">
+            <xsd:sequence>
+              <xsd:element minOccurs="0" name="companyName" type="xsd:string" />
+              <xsd:element minOccurs="0" name="dba" type="xsd:string" />
+              <xsd:element minOccurs="0" name="ein" type="xsd:long" />
+              <xsd:element minOccurs="0" name="companySite" type="xsd:string" />
+              <xsd:element minOccurs="0" name="sic" type="xsd:string" />
+              <xsd:element name="isActive" type="xsd:boolean" />
+              <xsd:element minOccurs="0" name="industryId" type="xsd:long" />
+              <xsd:element minOccurs="0" name="customerBillToAddress" type="tns:customerBillToAddress" />
+              <xsd:element minOccurs="0" maxOccurs="unbounded" name="contacts" nillable="true" type="tns:customerContact" />
+              <xsd:element minOccurs="0" maxOccurs="unbounded" name="customerAddresses" nillable="true" type="tns:customerAddresses" />
+              <xsd:element minOccurs="0" maxOccurs="unbounded" name="invoiceRequiredFields" nillable="true" type="tns:customerInvoiceRequiredField" />
+              <xsd:element minOccurs="0" maxOccurs="unbounded" name="invoiceVerifiedFields" nillable="true" type="tns:customerInvoiceVerifiedField" />
+              <xsd:element name="shipsFrequently" type="xsd:boolean" />
+            </xsd:sequence>
+          </xsd:extension>
+        </xsd:complexContent>
+      </xsd:complexType>
+      <xsd:complexType name="customerBillToAddress">
+        <xsd:complexContent mixed="false">
+          <xsd:extension base="tns:auditableBase">
+            <xsd:sequence>
+              <xsd:element minOccurs="0" name="billToCompanyName" type="xsd:string" />
+              <xsd:element minOccurs="0" name="customerId" type="xsd:long" />
+              <xsd:element minOccurs="0" name="address1" type="xsd:string" />
+              <xsd:element minOccurs="0" name="address2" type="xsd:string" />
+              <xsd:element minOccurs="0" name="zipCode" type="xsd:string" />
+              <xsd:element minOccurs="0" name="countryName" type="xsd:string" />
+              <xsd:element minOccurs="0" name="stateName" type="xsd:string" />
+              <xsd:element minOccurs="0" name="city" type="xsd:string" />
+              <xsd:element name="isActive" type="xsd:boolean" />
+              <xsd:element name="isCreditOverride" type="xsd:boolean" />
+              <xsd:element minOccurs="0" name="contactFirstName" type="xsd:string" />
+              <xsd:element minOccurs="0" name="contactLastName" type="xsd:string" />
+              <xsd:element minOccurs="0" name="contactPhone" type="xsd:long" />
+              <xsd:element minOccurs="0" name="contactEmail" type="xsd:string" />
+              <xsd:element minOccurs="0" name="secondaryContactEmail" type="xsd:string" />
+              <xsd:element minOccurs="0" name="isIndividualEmail" type="xsd:boolean" />
+              <xsd:element minOccurs="0" name="invoiceStyle" type="xsd:string" />
+              <xsd:element minOccurs="0" name="invoiceAfter" type="xsd:string" />
+              <xsd:element minOccurs="0" name="invoiceCurrency" type="xsd:string" />
+              <xsd:element minOccurs="0" name="invoiceBatchBilling" type="xsd:boolean" />
+              <xsd:element minOccurs="0" name="dnb" type="xsd:string" />
+              <xsd:element minOccurs="0" name="yearEstablished" type="xsd:int" />
+              <xsd:element minOccurs="0" name="creditAmount" type="xsd:decimal" />
+              <xsd:element minOccurs="0" name="availableCredit" type="xsd:decimal" />
+              <xsd:element minOccurs="0" name="prepayEmail" type="xsd:string" />
+              <xsd:element minOccurs="0" name="prepayPhone" type="xsd:long" />
+              <xsd:element minOccurs="0" name="bolSignature" type="xsd:string" />
+              <xsd:element minOccurs="0" name="podSignature" type="xsd:string" />
+              <xsd:element minOccurs="0" name="portalId" type="xsd:long" />
+              <xsd:element minOccurs="0" name="paymentTerms" type="tns:paymentTerms" />
+              <xsd:element minOccurs="0" name="frequencyType" type="tns:frequencyType" />
+              <xsd:element minOccurs="0" name="dateOfInvoice" type="tns:dayOfInvoice" />
+              <xsd:element minOccurs="0" name="deliveryMethod" type="tns:deliveryType" />
+              <xsd:element minOccurs="0" name="auditMarginBelowPct" type="xsd:decimal" />
+              <xsd:element minOccurs="0" name="auditMarginAbovePct" type="xsd:decimal" />
+              <xsd:element minOccurs="0" name="auditMarginAboveAmt" type="xsd:decimal" />
+              <xsd:element minOccurs="0" name="verifyCostBeforeInvoice" type="xsd:boolean" />
+              <xsd:element minOccurs="0" maxOccurs="unbounded" name="invoiceRequiredFields" nillable="true" type="tns:customerInvoiceRequiredField" />
+              <xsd:element minOccurs="0" maxOccurs="unbounded" name="invoiceVerifiedFields" nillable="true" type="tns:customerInvoiceVerifiedField" />
+              <xsd:element minOccurs="0" name="billToFullAddress" type="xsd:string" />
+              <xsd:element minOccurs="0" name="billToAddress" type="xsd:string" />
+              <xsd:element minOccurs="0" name="billToCityStateZip" type="xsd:string" />
+              <xsd:element minOccurs="0" maxOccurs="unbounded" name="invoiceDocuments" nillable="true" type="tns:invoiceDocuments" />
+              <xsd:element minOccurs="0" name="legacyBillToId" type="xsd:long" />
+              <xsd:element minOccurs="0" name="legacyAxAccountNumber" type="xsd:string" />
+              <xsd:element minOccurs="0" name="axAccountNumber" type="xsd:string" />
+            </xsd:sequence>
+          </xsd:extension>
+        </xsd:complexContent>
+      </xsd:complexType>
+      <xsd:complexType name="paymentTerms">
+        <xsd:complexContent mixed="false">
+          <xsd:extension base="tns:typeBase">
+            <xsd:sequence>
+              <xsd:element minOccurs="0" name="paymentTermsCode" type="xsd:string" />
+              <xsd:element minOccurs="0" name="paymentTermsDays" type="xsd:long" />
+            </xsd:sequence>
+          </xsd:extension>
+        </xsd:complexContent>
+      </xsd:complexType>
+      <xsd:complexType name="frequencyType">
+        <xsd:complexContent mixed="false">
+          <xsd:extension base="tns:typeBase">
+            <xsd:sequence />
+          </xsd:extension>
+        </xsd:complexContent>
+      </xsd:complexType>
+      <xsd:complexType name="dayOfInvoice">
+        <xsd:complexContent mixed="false">
+          <xsd:extension base="tns:typeBase">
+            <xsd:sequence>
+              <xsd:element minOccurs="0" name="frequencyType" type="xsd:string" />
+            </xsd:sequence>
+          </xsd:extension>
+        </xsd:complexContent>
+      </xsd:complexType>
+      <xsd:complexType name="deliveryType">
+        <xsd:complexContent mixed="false">
+          <xsd:extension base="tns:typeBase">
+            <xsd:sequence />
+          </xsd:extension>
+        </xsd:complexContent>
+      </xsd:complexType>
+      <xsd:complexType name="customerInvoiceRequiredField">
+        <xsd:complexContent mixed="false">
+          <xsd:extension base="tns:auditableBase">
+            <xsd:sequence>
+              <xsd:element minOccurs="0" name="invoiceRequiredFields" type="tns:invoiceRequiredField" />
+              <xsd:element name="active" type="xsd:boolean" />
+              <xsd:element minOccurs="0" name="customerBillAddress" type="tns:customerBillToAddress" />
+              <xsd:element minOccurs="0" name="customer" type="tns:customer" />
+            </xsd:sequence>
+          </xsd:extension>
+        </xsd:complexContent>
+      </xsd:complexType>
+      <xsd:complexType name="invoiceRequiredField">
+        <xsd:sequence>
+          <xsd:element minOccurs="0" name="name" type="xsd:string" />
+          <xsd:element minOccurs="0" name="mappingTableName" type="xsd:string" />
+          <xsd:element minOccurs="0" name="mappingColumnName" type="xsd:string" />
+          <xsd:element minOccurs="0" name="fieldEnum" type="xsd:string" />
+          <xsd:element minOccurs="0" name="isActive" type="xsd:boolean" />
+          <xsd:element minOccurs="0" name="isRequiredField" type="xsd:boolean" />
+          <xsd:element minOccurs="0" name="isEntryField" type="xsd:boolean" />
+        </xsd:sequence>
+      </xsd:complexType>
+      <xsd:complexType name="customerInvoiceVerifiedField">
+        <xsd:complexContent mixed="false">
+          <xsd:extension base="tns:auditableBase">
+            <xsd:sequence>
+              <xsd:element minOccurs="0" name="invoiceRequiredFields" type="tns:invoiceRequiredField" />
+              <xsd:element name="active" type="xsd:boolean" />
+              <xsd:element minOccurs="0" name="customerBillAddress" type="tns:customerBillToAddress" />
+            </xsd:sequence>
+          </xsd:extension>
+        </xsd:complexContent>
+      </xsd:complexType>
+      <xsd:complexType name="invoiceDocuments">
+        <xsd:complexContent mixed="false">
+          <xsd:extension base="tns:auditableBase">
+            <xsd:sequence>
+              <xsd:element minOccurs="0" name="documentType" type="tns:documentType" />
+              <xsd:element minOccurs="0" name="customerBillAddress" type="tns:customerBillToAddress" />
+              <xsd:element minOccurs="0" name="active" type="xsd:boolean" />
+            </xsd:sequence>
+          </xsd:extension>
+        </xsd:complexContent>
+      </xsd:complexType>
+      <xsd:complexType name="documentType">
+        <xsd:complexContent mixed="false">
+          <xsd:extension base="tns:typeBase">
+            <xsd:sequence>
+              <xsd:element minOccurs="0" name="sortOrder" type="xsd:int" />
+              <xsd:element minOccurs="0" name="category" type="xsd:unsignedShort" />
+            </xsd:sequence>
+          </xsd:extension>
+        </xsd:complexContent>
+      </xsd:complexType>
+      <xsd:complexType name="customerContact">
+        <xsd:complexContent mixed="false">
+          <xsd:extension base="tns:auditableBase">
+            <xsd:sequence>
+              <xsd:element minOccurs="0" name="contactFirstName" type="xsd:string" />
+              <xsd:element minOccurs="0" name="contactLastName" type="xsd:string" />
+              <xsd:element minOccurs="0" name="contactEmailId" type="xsd:string" />
+              <xsd:element minOccurs="0" name="contactPhone" type="xsd:long" />
+              <xsd:element minOccurs="0" name="contactFax" type="xsd:long" />
+              <xsd:element name="isActive" type="xsd:boolean" />
+              <xsd:element minOccurs="0" name="customer" type="tns:customer" />
+            </xsd:sequence>
+          </xsd:extension>
+        </xsd:complexContent>
+      </xsd:complexType>
+      <xsd:complexType name="customerAddressContactDetail">
+        <xsd:complexContent mixed="false">
+          <xsd:extension base="tns:auditableBase">
+            <xsd:sequence>
+              <xsd:element minOccurs="0" name="contactName" type="xsd:string" />
+              <xsd:element minOccurs="0" name="contactEmail" type="xsd:string" />
+              <xsd:element minOccurs="0" name="contactPhone" type="xsd:long" />
+              <xsd:element minOccurs="0" name="contactFax" type="xsd:long" />
+              <xsd:element minOccurs="0" name="customerAddresses" type="tns:customerAddresses" />
+            </xsd:sequence>
+          </xsd:extension>
+        </xsd:complexContent>
+      </xsd:complexType>
+      <xsd:complexType name="customerBillToAddressDTO">
+        <xsd:sequence>
+          <xsd:element name="active" type="xsd:boolean" />
+          <xsd:element minOccurs="0" name="address1" type="xsd:string" />
+          <xsd:element minOccurs="0" name="address2" type="xsd:string" />
+          <xsd:element minOccurs="0" name="availableCredit" type="xsd:decimal" />
+          <xsd:element minOccurs="0" name="axAccountNumber" type="xsd:string" />
+          <xsd:element minOccurs="0" name="billToCompanyName" type="xsd:string" />
+          <xsd:element minOccurs="0" name="billToFullAddress" type="xsd:string" />
+          <xsd:element minOccurs="0" name="city" type="xsd:string" />
+          <xsd:element minOccurs="0" name="contactEmail" type="xsd:string" />
+          <xsd:element minOccurs="0" name="countryName" type="xsd:string" />
+          <xsd:element minOccurs="0" name="creditAmount" type="xsd:decimal" />
+          <xsd:element name="creditOverride" type="xsd:boolean" />
+          <xsd:element minOccurs="0" name="id" type="xsd:long" />
+          <xsd:element minOccurs="0" maxOccurs="unbounded" name="invoiceDocuments" nillable="true" type="tns:invoiceDocuments" />
+          <xsd:element minOccurs="0" name="legacyAxAccountNumber" type="xsd:string" />
+          <xsd:element minOccurs="0" name="legacyBillToId" type="xsd:long" />
+          <xsd:element minOccurs="0" name="paymentTerms" type="tns:lookupDTO" />
+          <xsd:element minOccurs="0" name="stateName" type="xsd:string" />
+          <xsd:element minOccurs="0" name="zipCode" type="xsd:string" />
+        </xsd:sequence>
+      </xsd:complexType>
+      <xsd:complexType name="customerLocationDTO">
+        <xsd:sequence>
+          <xsd:element name="active" type="xsd:boolean" />
+          <xsd:element minOccurs="0" name="companyCode" type="xsd:string" />
+          <xsd:element minOccurs="0" name="customerBillAddress" type="tns:customerBillToAddressDTO" />
+          <xsd:element minOccurs="0" name="id" type="xsd:long" />
+          <xsd:element minOccurs="0" name="locationName" type="xsd:string" />
+          <xsd:element minOccurs="0" name="primSalesRep" type="tns:userDTO" />
+        </xsd:sequence>
+      </xsd:complexType>
+      <xsd:complexType name="userDTO">
+        <xsd:sequence>
+          <xsd:element minOccurs="0" name="deskNumber" type="xsd:long" />
+          <xsd:element minOccurs="0" name="emailId" type="xsd:string" />
+          <xsd:element minOccurs="0" name="firstName" type="xsd:string" />
+          <xsd:element minOccurs="0" name="id" type="xsd:long" />
+          <xsd:element minOccurs="0" name="lastName" type="xsd:string" />
+          <xsd:element minOccurs="0" name="mobileNumber" type="xsd:long" />
+        </xsd:sequence>
+      </xsd:complexType>
+      <xsd:complexType name="invoiceRequiredFieldDTO">
+        <xsd:sequence>
+          <xsd:element minOccurs="0" name="id" type="xsd:long" />
+          <xsd:element minOccurs="0" name="mappingColumnName" type="xsd:string" />
+          <xsd:element minOccurs="0" name="mappingTableName" type="xsd:string" />
+          <xsd:element minOccurs="0" name="name" type="xsd:string" />
+          <xsd:element minOccurs="0" name="previousValue" type="xsd:string" />
+          <xsd:element minOccurs="0" name="value" type="xsd:string" />
+        </xsd:sequence>
+      </xsd:complexType>
+      <xsd:complexType name="loadCarrierDTO">
+        <xsd:sequence>
+          <xsd:element minOccurs="0" name="active" type="xsd:boolean" />
+          <xsd:element minOccurs="0" name="adjustmentId" type="xsd:long" />
+          <xsd:element minOccurs="0" name="carrier" type="tns:carrierDTO" />
+          <xsd:element minOccurs="0" name="carrierContactId" type="xsd:long" />
+          <xsd:element minOccurs="0" name="carrierIssueReason" type="tns:carrierIssueReasonsDTO" />
+          <xsd:element minOccurs="0" name="driversPhone" type="xsd:long" />
+          <xsd:element minOccurs="0" name="id" type="xsd:long" />
+        </xsd:sequence>
+      </xsd:complexType>
+      <xsd:complexType name="carrierDTO">
+        <xsd:sequence>
+          <xsd:element minOccurs="0" name="active" type="xsd:boolean" />
+          <xsd:element minOccurs="0" maxOccurs="unbounded" name="carrierContacts" nillable="true" type="tns:carrierContactDTO" />
+          <xsd:element minOccurs="0" name="carrierName" type="xsd:string" />
+          <xsd:element minOccurs="0" name="certification" type="xsd:boolean" />
+          <xsd:element minOccurs="0" name="city" type="xsd:string" />
+          <xsd:element minOccurs="0" name="cityStateZip" type="xsd:string" />
+          <xsd:element minOccurs="0" name="dot" type="xsd:string" />
+          <xsd:element minOccurs="0" name="id" type="xsd:long" />
+          <xsd:element minOccurs="0" name="mc" type="xsd:string" />
+          <xsd:element minOccurs="0" name="scac" type="xsd:string" />
+          <xsd:element minOccurs="0" name="state" type="xsd:string" />
+          <xsd:element minOccurs="0" name="zip" type="xsd:string" />
+        </xsd:sequence>
+      </xsd:complexType>
+      <xsd:complexType name="carrierContactDTO">
+        <xsd:sequence>
+          <xsd:element name="active" type="xsd:boolean" />
+          <xsd:element name="admin" type="xsd:boolean" />
+          <xsd:element minOccurs="0" name="carrier" type="tns:carrierDTO" />
+          <xsd:element minOccurs="0" name="contactEmailId" type="xsd:string" />
+          <xsd:element minOccurs="0" name="contactFax" type="xsd:string" />
+          <xsd:element minOccurs="0" name="contactMobile" type="xsd:string" />
+          <xsd:element minOccurs="0" name="contactName" type="xsd:string" />
+          <xsd:element minOccurs="0" name="contactPhoneNumber" type="xsd:long" />
+          <xsd:element minOccurs="0" name="contactRoleId" type="xsd:long" />
+          <xsd:element minOccurs="0" name="contactTitle" type="xsd:string" />
+          <xsd:element minOccurs="0" name="contactType" type="tns:lookupDTO" />
+          <xsd:element minOccurs="0" name="id" type="xsd:long" />
+        </xsd:sequence>
+      </xsd:complexType>
+      <xsd:complexType name="carrierIssueReasonsDTO">
+        <xsd:sequence>
+          <xsd:element minOccurs="0" name="id" type="xsd:long" />
+          <xsd:element minOccurs="0" name="issueReason" type="xsd:string" />
+        </xsd:sequence>
+      </xsd:complexType>
+      <xsd:complexType name="loadCommodityDTO">
+        <xsd:sequence>
+          <xsd:element minOccurs="0" name="commodityName" type="xsd:string" />
+          <xsd:element minOccurs="0" name="hazmat" type="xsd:boolean" />
+          <xsd:element minOccurs="0" name="height" type="xsd:decimal" />
+          <xsd:element minOccurs="0" name="id" type="xsd:long" />
+          <xsd:element minOccurs="0" name="length" type="xsd:decimal" />
+          <xsd:element minOccurs="0" name="pallets" type="xsd:int" />
+          <xsd:element minOccurs="0" name="piecesValue" type="xsd:decimal" />
+          <xsd:element minOccurs="0" name="totalPieces" type="xsd:int" />
+          <xsd:element minOccurs="0" name="unitType" type="xsd:string" />
+          <xsd:element minOccurs="0" name="weightIbs" type="xsd:decimal" />
+          <xsd:element minOccurs="0" name="width" type="xsd:decimal" />
+        </xsd:sequence>
+      </xsd:complexType>
+      <xsd:complexType name="loadDeliveryRemindersDTO">
+        <xsd:sequence>
+          <xsd:element name="hourlyRemindedCount" type="xsd:short" />
+          <xsd:element minOccurs="0" name="id" type="xsd:long" />
+          <xsd:element minOccurs="0" name="loadId" type="xsd:long" />
+          <xsd:element minOccurs="0" name="reminderDate" type="xsd:dateTime" />
+          <xsd:element name="reminderType" type="xsd:short" />
+        </xsd:sequence>
+      </xsd:complexType>
+      <xsd:complexType name="loadNotesDTO">
+        <xsd:sequence>
+          <xsd:element minOccurs="0" name="id" type="xsd:long" />
+          <xsd:element minOccurs="0" name="notesDescription" type="xsd:string" />
+        </xsd:sequence>
+      </xsd:complexType>
+      <xsd:complexType name="loadOriginDestDTO">
+        <xsd:sequence>
+          <xsd:element minOccurs="0" name="deliveryConfirm" type="xsd:string" />
+          <xsd:element minOccurs="0" name="deliveryDate" type="xsd:string" />
+          <xsd:element minOccurs="0" name="deliveryId" type="xsd:string" />
+          <xsd:element minOccurs="0" name="deliveryTime" type="xsd:string" />
+          <xsd:element minOccurs="0" name="destDayLightSaving" type="xsd:boolean" />
+          <xsd:element minOccurs="0" name="destFacilityNotes" type="xsd:string" />
+          <xsd:element minOccurs="0" name="destSelectionType" type="tns:lookupDTO" />
+          <xsd:element minOccurs="0" name="destTimezone" type="xsd:string" />
+          <xsd:element minOccurs="0" name="destinationAppointmentNo" type="xsd:string" />
+          <xsd:element minOccurs="0" name="destinationCity" type="xsd:string" />
+          <xsd:element minOccurs="0" name="destinationCompanyName" type="xsd:string" />
+          <xsd:element minOccurs="0" name="destinationContactExtension" type="xsd:string" />
+          <xsd:element minOccurs="0" name="destinationContactName" type="xsd:string" />
+          <xsd:element minOccurs="0" name="destinationContactNumber" type="xsd:long" />
+          <xsd:element minOccurs="0" name="destinationCountry" type="xsd:string" />
+          <xsd:element minOccurs="0" name="destinationDeliveryNumber" type="xsd:string" />
+          <xsd:element minOccurs="0" name="destinationLatitude" type="xsd:decimal" />
+          <xsd:element minOccurs="0" name="destinationLongitude" type="xsd:decimal" />
+          <xsd:element minOccurs="0" name="destinationPnetDate" type="xsd:dateTime" />
+          <xsd:element minOccurs="0" name="destinationPnetTime" type="xsd:time" />
+          <xsd:element minOccurs="0" name="destinationPnltDate" type="xsd:dateTime" />
+          <xsd:element minOccurs="0" name="destinationPnltTime" type="xsd:time" />
+          <xsd:element minOccurs="0" name="destinationState" type="xsd:string" />
+          <xsd:element minOccurs="0" name="destinationStateCode" type="xsd:string" />
+          <xsd:element minOccurs="0" name="destinationStreetAddress1" type="xsd:string" />
+          <xsd:element minOccurs="0" name="destinationStreetAddress2" type="xsd:string" />
+          <xsd:element minOccurs="0" name="destinationZipcode" type="xsd:string" />
+          <xsd:element minOccurs="0" name="destinationSeqInRoute" type="xsd:int" />
+          <xsd:element minOccurs="0" name="destinationCustomerPoNumber" type="xsd:string" />
+          <xsd:element minOccurs="0" name="destinationNodeCode" type="xsd:string" />
+          <xsd:element minOccurs="0" name="destinationPackageType" type="xsd:string" />
+          <xsd:element minOccurs="0" name="destinationPartNumber" type="xsd:string" />
+          <xsd:element minOccurs="0" name="destinationQuantity" type="xsd:int" />
+          <xsd:element minOccurs="0" name="destinationWeight" type="xsd:decimal" />
+          <xsd:element minOccurs="0" name="durationDays" type="xsd:int" />
+          <xsd:element minOccurs="0" name="durationHours" type="xsd:int" />
+          <xsd:element minOccurs="0" name="durationMins" type="xsd:int" />
+          <xsd:element minOccurs="0" name="id" type="xsd:long" />
+          <xsd:element minOccurs="0" name="loadId" type="xsd:long" />
+          <xsd:element minOccurs="0" name="mileage" type="xsd:decimal" />
+          <xsd:element minOccurs="0" name="orginFacilityNotes" type="xsd:string" />
+          <xsd:element minOccurs="0" name="originAppointmentNo" type="xsd:string" />
+          <xsd:element minOccurs="0" name="originCity" type="xsd:string" />
+          <xsd:element minOccurs="0" name="originCompanyName" type="xsd:string" />
+          <xsd:element minOccurs="0" name="originContactExtension" type="xsd:string" />
+          <xsd:element minOccurs="0" name="originContactName" type="xsd:string" />
+          <xsd:element minOccurs="0" name="originContactNumber" type="xsd:long" />
+          <xsd:element minOccurs="0" name="originCountry" type="xsd:string" />
+          <xsd:element name="originDayLightSaving" type="xsd:boolean" />
+          <xsd:element minOccurs="0" name="originLatitude" type="xsd:decimal" />
+          <xsd:element minOccurs="0" name="originLongitude" type="xsd:decimal" />
+          <xsd:element minOccurs="0" name="originPickupNumber" type="xsd:string" />
+          <xsd:element minOccurs="0" name="originPnetDate" type="xsd:dateTime" />
+          <xsd:element minOccurs="0" name="originPnetTime" type="xsd:time" />
+          <xsd:element minOccurs="0" name="originPnltDate" type="xsd:dateTime" />
+          <xsd:element minOccurs="0" name="originPnltTime" type="xsd:time" />
+          <xsd:element minOccurs="0" name="originSelectionType" type="tns:lookupDTO" />
+          <xsd:element minOccurs="0" name="originState" type="xsd:string" />
+          <xsd:element minOccurs="0" name="originStateCode" type="xsd:string" />
+          <xsd:element minOccurs="0" name="originStreetAddress1" type="xsd:string" />
+          <xsd:element minOccurs="0" name="originStreetAddress2" type="xsd:string" />
+          <xsd:element minOccurs="0" name="originTimezone" type="xsd:string" />
+          <xsd:element minOccurs="0" name="originZipcode" type="xsd:string" />
+          <xsd:element minOccurs="0" name="originCustomerPoNumber" type="xsd:string" />
+          <xsd:element minOccurs="0" name="originNodeCode" type="xsd:string" />
+          <xsd:element minOccurs="0" name="originPackageType" type="xsd:string" />
+          <xsd:element minOccurs="0" name="originPartNumber" type="xsd:string" />
+          <xsd:element minOccurs="0" name="originQuantity" type="xsd:int" />
+          <xsd:element minOccurs="0" name="originWeight" type="xsd:decimal" />
+          <xsd:element minOccurs="0" name="pickUpId" type="xsd:string" />
+          <xsd:element minOccurs="0" name="pickupBol" type="xsd:string" />
+          <xsd:element minOccurs="0" name="pickupConfirm" type="xsd:string" />
+          <xsd:element minOccurs="0" name="pickupDate" type="xsd:string" />
+          <xsd:element minOccurs="0" name="pickupTime" type="xsd:string" />
+        </xsd:sequence>
+      </xsd:complexType>
+      <xsd:complexType name="time">
+        <xsd:sequence />
+      </xsd:complexType>
+      <xsd:complexType name="loadPostModalDTO">
+        <xsd:sequence>
+          <xsd:element minOccurs="0" name="id" type="xsd:long" />
+          <xsd:element minOccurs="0" name="loadPostModalValue" type="xsd:decimal" />
+          <xsd:element minOccurs="0" name="loadPostType" type="tns:lookupDTO" />
+          <xsd:element minOccurs="0" name="posted" type="xsd:boolean" />
+          <xsd:element minOccurs="0" name="sendRate" type="xsd:boolean" />
+        </xsd:sequence>
+      </xsd:complexType>
+      <xsd:complexType name="loadReferenceFieldsDTO">
+        <xsd:sequence>
+          <xsd:element minOccurs="0" name="id" type="xsd:long" />
+          <xsd:element minOccurs="0" name="invoiceRequiredField" type="tns:invoiceRequiredFieldDTO" />
+          <xsd:element minOccurs="0" name="value" type="xsd:string" />
+        </xsd:sequence>
+      </xsd:complexType>
+      <xsd:complexType name="loadServiceTypeDTO">
+        <xsd:sequence>
+          <xsd:element minOccurs="0" name="id" type="xsd:long" />
+          <xsd:element minOccurs="0" name="serviceType" type="tns:lookupDTO" />
+        </xsd:sequence>
+      </xsd:complexType>
+      <xsd:complexType name="loadStatusDTO">
+        <xsd:sequence>
+          <xsd:element name="active" type="xsd:boolean" />
+          <xsd:element minOccurs="0" name="description" type="xsd:string" />
+          <xsd:element minOccurs="0" name="id" type="xsd:long" />
+          <xsd:element minOccurs="0" name="loadStatusId" type="xsd:long" />
+          <xsd:element minOccurs="0" name="name" type="xsd:string" />
+        </xsd:sequence>
+      </xsd:complexType>
+      <xsd:complexType name="loadStopoffDTO">
+        <xsd:sequence>
+          <xsd:element minOccurs="0" name="customerPoNum" type="xsd:string" />
+          <xsd:element minOccurs="0" name="dayLightSaving" type="xsd:boolean" />
+          <xsd:element minOccurs="0" name="deliveryConfirm" type="xsd:string" />
+          <xsd:element minOccurs="0" name="deliveryDate" type="xsd:string" />
+          <xsd:element minOccurs="0" name="deliveryId" type="xsd:string" />
+          <xsd:element minOccurs="0" name="deliveryTime" type="xsd:string" />
+          <xsd:element minOccurs="0" name="facilityNotes" type="xsd:string" />
+          <xsd:element minOccurs="0" name="id" type="xsd:long" />
+          <xsd:element minOccurs="0" name="latitude" type="xsd:decimal" />
+          <xsd:element minOccurs="0" name="longitude" type="xsd:decimal" />
+          <xsd:element minOccurs="0" name="nodeCode" type="xsd:string" />
+          <xsd:element minOccurs="0" name="packageType" type="xsd:string" />
+          <xsd:element minOccurs="0" name="partNumber" type="xsd:string" />
+          <xsd:element minOccurs="0" name="pickUpId" type="xsd:string" />
+          <xsd:element minOccurs="0" name="pickupBol" type="xsd:string" />
+          <xsd:element minOccurs="0" name="pickupConfirm" type="xsd:string" />
+          <xsd:element minOccurs="0" name="pickupDate" type="xsd:string" />
+          <xsd:element minOccurs="0" name="pickupTime" type="xsd:string" />
+          <xsd:element minOccurs="0" name="pnetDate" type="xsd:dateTime" />
+          <xsd:element minOccurs="0" name="pnetTime" type="xsd:time" />
+          <xsd:element minOccurs="0" name="pnetTimeAsString" type="xsd:string" />
+          <xsd:element minOccurs="0" name="pnltDate" type="xsd:dateTime" />
+          <xsd:element minOccurs="0" name="pnltTime" type="xsd:time" />
+          <xsd:element minOccurs="0" name="pnltTimeAsString" type="xsd:string" />
+          <xsd:element name="quantity" type="xsd:int" />
+          <xsd:element name="seqInRoute" type="xsd:int" />
+          <xsd:element minOccurs="0" name="stopoffAppointmentNo" type="xsd:string" />
+          <xsd:element minOccurs="0" name="stopoffCity" type="xsd:string" />
+          <xsd:element minOccurs="0" name="stopoffCompanyName" type="xsd:string" />
+          <xsd:element minOccurs="0" name="stopoffContactExtension" type="xsd:string" />
+          <xsd:element minOccurs="0" name="stopoffContactName" type="xsd:string" />
+          <xsd:element minOccurs="0" name="stopoffContactNumber" type="xsd:long" />
+          <xsd:element minOccurs="0" name="stopoffCountry" type="xsd:string" />
+          <xsd:element minOccurs="0" name="stopoffLoadAction" type="xsd:string" />
+          <xsd:element minOccurs="0" name="stopoffPickupNumber" type="xsd:string" />
+          <xsd:element minOccurs="0" name="stopoffSelectionType" type="tns:lookupDTO" />
+          <xsd:element minOccurs="0" name="stopoffState" type="xsd:string" />
+          <xsd:element minOccurs="0" name="stopoffStateCode" type="xsd:string" />
+          <xsd:element minOccurs="0" name="stopoffStreetAddress1" type="xsd:string" />
+          <xsd:element minOccurs="0" name="stopoffStreetAddress2" type="xsd:string" />
+          <xsd:element minOccurs="0" name="stopoffZipcode" type="xsd:string" />
+          <xsd:element minOccurs="0" name="timeZone" type="xsd:string" />
+          <xsd:element minOccurs="0" name="weight" type="xsd:decimal" />
+        </xsd:sequence>
+      </xsd:complexType>
+      <xsd:complexType name="loadTrackingNoteDTO">
+        <xsd:sequence>
+          <xsd:element minOccurs="0" name="city" type="xsd:string" />
+          <xsd:element minOccurs="0" name="country" type="xsd:string" />
+          <xsd:element minOccurs="0" name="createdHour" type="xsd:int" />
+          <xsd:element minOccurs="0" name="createdMinute" type="xsd:int" />
+          <xsd:element name="dayLightSaving" type="xsd:boolean" />
+          <xsd:element minOccurs="0" name="eventDate" type="xsd:dateTime" />
+          <xsd:element minOccurs="0" name="id" type="xsd:long" />
+          <xsd:element minOccurs="0" name="loadId" type="xsd:long" />
+          <xsd:element minOccurs="0" name="notesDescription" type="xsd:string" />
+          <xsd:element minOccurs="0" name="state" type="xsd:string" />
+          <xsd:element minOccurs="0" name="timeZone" type="xsd:string" />
+          <xsd:element minOccurs="0" name="zipcode" type="xsd:string" />
+        </xsd:sequence>
+      </xsd:complexType>
+      <xsd:complexType name="allNotesDTO">
+        <xsd:sequence>
+          <xsd:element minOccurs="0" name="id" type="xsd:long" />
+          <xsd:element minOccurs="0" name="loadId" type="xsd:long" />
+          <xsd:element minOccurs="0" name="noteTypes" type="tns:lookupDTO" />
+          <xsd:element minOccurs="0" name="notesDesc" type="xsd:string" />
+        </xsd:sequence>
+      </xsd:complexType>
+    </xsd:schema>
+  </wsdl:types>
+  <wsdl:message name="createLoad30Request">
+    <wsdl:part name="createLoad30Request" element="tns:createLoad30Request" />
+  </wsdl:message>
+  <wsdl:message name="createLoad30Response">
+    <wsdl:part name="createLoad30Response" element="tns:createLoad30Response" />
+  </wsdl:message>
+  <wsdl:portType name="CreateLoad30">
+    <wsdl:operation name="LoadDTO">
+      <wsdl:input name="createLoad30Request" message="tns:createLoad30Request" />
+      <wsdl:output name="createLoad30Response" message="tns:createLoad30Response" />
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:binding name="CreateLoad30Service" type="tns:CreateLoad30">
+    <soap:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="LoadDTO">
+      <soap:operation soapAction="" />
+      <wsdl:input name="createLoad30Request">
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output name="createLoad30Response">
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:service name="CreateLoad30Service">
+    <wsdl:port name="CreateLoad30Service" binding="tns:CreateLoad30Service">
+      <soap:address location="http://35.196.157.57:8080/" />
+    </wsdl:port>
+  </wsdl:service>
+</wsdl:definitions>

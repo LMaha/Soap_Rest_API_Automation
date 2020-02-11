@@ -1,0 +1,174 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="..\packages\NUnit3TestAdapter.3.15.1\build\net35\NUnit3TestAdapter.props" Condition="Exists('..\packages\NUnit3TestAdapter.3.15.1\build\net35\NUnit3TestAdapter.props')" />
+  <Import Project="..\packages\NUnit.3.12.0\build\NUnit.props" Condition="Exists('..\packages\NUnit.3.12.0\build\NUnit.props')" />
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{148A3870-F1F8-4DBA-B6BB-11F90AE58FE7}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>EDI_soapAPI</RootNamespace>
+    <AssemblyName>EDI-soapAPI</AssemblyName>
+    <TargetFrameworkVersion>v4.7.2</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <Deterministic>true</Deterministic>
+    <NuGetPackageImportStamp>
+    </NuGetPackageImportStamp>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="DnsClient, Version=1.0.7.0, Culture=neutral, PublicKeyToken=4574bb5573c51424, processorArchitecture=MSIL">
+      <HintPath>..\packages\DnsClient.1.0.7\lib\net45\DnsClient.dll</HintPath>
+    </Reference>
+    <Reference Include="ExtentReports, Version=4.0.3.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\ExtentReports.4.0.3\lib\ExtentReports.dll</HintPath>
+    </Reference>
+    <Reference Include="MongoDB.Bson, Version=2.7.2.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\MongoDB.Bson.2.7.2\lib\net45\MongoDB.Bson.dll</HintPath>
+    </Reference>
+    <Reference Include="MongoDB.Driver, Version=2.7.2.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\MongoDB.Driver.2.7.2\lib\net45\MongoDB.Driver.dll</HintPath>
+    </Reference>
+    <Reference Include="MongoDB.Driver.Core, Version=2.7.2.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\MongoDB.Driver.Core.2.7.2\lib\net45\MongoDB.Driver.Core.dll</HintPath>
+    </Reference>
+    <Reference Include="Newtonsoft.Json, Version=12.0.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed, processorArchitecture=MSIL">
+      <HintPath>..\packages\Newtonsoft.Json.12.0.1\lib\net45\Newtonsoft.Json.dll</HintPath>
+    </Reference>
+    <Reference Include="nunit.framework, Version=3.12.0.0, Culture=neutral, PublicKeyToken=2638cd05610744eb, processorArchitecture=MSIL">
+      <HintPath>..\packages\NUnit.3.12.0\lib\net45\nunit.framework.dll</HintPath>
+    </Reference>
+    <Reference Include="RazorEngine, Version=3.10.0.0, Culture=neutral, PublicKeyToken=9ee697374c7e744a, processorArchitecture=MSIL">
+      <HintPath>..\packages\RazorEngine.3.10.0\lib\net45\RazorEngine.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Buffers, Version=4.0.1.0, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.Buffers.4.3.0\lib\netstandard1.1\System.Buffers.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Configuration" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Runtime.InteropServices.RuntimeInformation, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.Runtime.InteropServices.RuntimeInformation.4.0.0\lib\net45\System.Runtime.InteropServices.RuntimeInformation.dll</HintPath>
+      <Private>True</Private>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System.Web.Razor, Version=3.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.AspNet.Razor.3.0.0\lib\net45\System.Web.Razor.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Net.Http" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="BaseTest.cs" />
+    <Compile Include="CreateCustReq.cs" />
+    <Compile Include="CreatedBy.cs" />
+    <Compile Include="Entities\CommitType.cs" />
+    <Compile Include="Entities\EDIEntities\Body.cs" />
+    <Compile Include="Entities\EDIEntities\EdiStageRes.cs" />
+    <Compile Include="Entities\EDIEntities\EdiStagingLoadDTO.cs" />
+    <Compile Include="Entities\EdiRule.cs" />
+    <Compile Include="Entities\EdiRuleCommitType.cs" />
+    <Compile Include="Entities\Equipment.cs" />
+    <Compile Include="Entities\ExceptionEntities\Body.cs" />
+    <Compile Include="Entities\ExceptionEntities\CleExpReq.cs" />
+    <Compile Include="Entities\ExceptionEntities\CleExpRes.cs" />
+    <Compile Include="Entities\ExceptionEntities\Country.cs" />
+    <Compile Include="Entities\ExceptionEntities\Customer.cs" />
+    <Compile Include="Entities\ExceptionEntities\CustomerLocation.cs" />
+    <Compile Include="Entities\ExceptionEntities\EdiExceptionQueueList.cs" />
+    <Compile Include="Entities\ExceptionEntities\EdiIssueDTO.cs" />
+    <Compile Include="Entities\ExceptionEntities\EdiRejectReasonCode.cs" />
+    <Compile Include="Entities\ExceptionEntities\Headers.cs" />
+    <Compile Include="Entities\ExceptionEntities\Issue.cs" />
+    <Compile Include="Entities\ExceptionEntities\LoadsWithIssues.cs" />
+    <Compile Include="Entities\FirstAddress.cs" />
+    <Compile Include="Entities\LoadRestResponse\Body.cs" />
+    <Compile Include="Entities\LoadRestResponse\Headers.cs" />
+    <Compile Include="Entities\LoadRestResponse\LoadQBDetail.cs" />
+    <Compile Include="Entities\LoadRestResponse\LoadSrRes.cs" />
+    <Compile Include="Entities\Location.cs" />
+    <Compile Include="Entities\Industry.cs" />
+    <Compile Include="Entities\UpdCustRes.cs" />
+    <Compile Include="LoadRestSvc.cs" />
+    <Compile Include="CustomerForPLSSvc.cs" />
+    <Compile Include="CustResponse.cs" />
+    <Compile Include="CustSearchReq.cs" />
+    <Compile Include="Entities\AccountManager.cs" />
+    <Compile Include="Entities\BillToAddress.cs" />
+    <Compile Include="Entities\CustResponse\Body.cs" />
+    <Compile Include="Entities\Contact.cs" />
+    <Compile Include="Entities\CreatedBy.cs" />
+    <Compile Include="Entities\CustomerBillAddress.cs" />
+    <Compile Include="Entities\CustomerLocation.cs" />
+    <Compile Include="Entities\CustomerNote.cs" />
+    <Compile Include="Entities\CustResponse\BillToAddress.cs" />
+    <Compile Include="Entities\CustResponse\Contact.cs" />
+    <Compile Include="Entities\CustResponse\CustomerBillAddress.cs" />
+    <Compile Include="Entities\CustResponse\CustomerLocation.cs" />
+    <Compile Include="Entities\CustResponse\CustomerNote.cs" />
+    <Compile Include="Entities\CustResponse\GICoding.cs" />
+    <Compile Include="Entities\DeliveryMethod.cs" />
+    <Compile Include="Entities\GICoding.cs" />
+    <Compile Include="Entities\Headers.cs" />
+    <Compile Include="Entities\ModifiedBy.cs" />
+    <Compile Include="Entities\NoteTypes.cs" />
+    <Compile Include="Entities\PaymentTerms.cs" />
+    <Compile Include="Entities\PLSDivision.cs" />
+    <Compile Include="Entities\PLSOffice.cs" />
+    <Compile Include="Entities\PrimeSalesRep.cs" />
+    <Compile Include="ModifiedBy.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="EDITests.cs" />
+    <Compile Include="UpdCustomer.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="App.config" />
+    <None Include="packages.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\SharedAPIFramework\SharedAPIFramework.csproj">
+      <Project>{da3f8c95-17f4-48e3-9756-4b874e27a93c}</Project>
+      <Name>SharedAPIFramework</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\SoapService\SoapService\SoapService.csproj">
+      <Project>{c966e55a-c6e1-4a7b-aaf3-fdbe4cddca8d}</Project>
+      <Name>SoapService</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="extent-config.xml">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+  </ItemGroup>
+  <ItemGroup />
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <Target Name="EnsureNuGetPackageBuildImports" BeforeTargets="PrepareForBuild">
+    <PropertyGroup>
+      <ErrorText>This project references NuGet package(s) that are missing on this computer. Use NuGet Package Restore to download them.  For more information, see http://go.microsoft.com/fwlink/?LinkID=322105. The missing file is {0}.</ErrorText>
+    </PropertyGroup>
+    <Error Condition="!Exists('..\packages\NUnit.3.12.0\build\NUnit.props')" Text="$([System.String]::Format('$(ErrorText)', '..\packages\NUnit.3.12.0\build\NUnit.props'))" />
+    <Error Condition="!Exists('..\packages\NUnit3TestAdapter.3.15.1\build\net35\NUnit3TestAdapter.props')" Text="$([System.String]::Format('$(ErrorText)', '..\packages\NUnit3TestAdapter.3.15.1\build\net35\NUnit3TestAdapter.props'))" />
+  </Target>
+</Project>

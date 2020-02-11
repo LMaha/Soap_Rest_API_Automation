@@ -1,0 +1,6 @@
+C:\BitBucketSourceCode\edi-soapapiautomation\SoapService\SoapService\bin\Debug\SoapService.dll.config
+C:\BitBucketSourceCode\edi-soapapiautomation\SoapService\SoapService\bin\Debug\SoapService.dll
+C:\BitBucketSourceCode\edi-soapapiautomation\SoapService\SoapService\bin\Debug\SoapService.pdb
+C:\BitBucketSourceCode\edi-soapapiautomation\SoapService\SoapService\obj\Debug\SoapService.csprojAssemblyReference.cache
+C:\BitBucketSourceCode\edi-soapapiautomation\SoapService\SoapService\obj\Debug\SoapService.dll
+C:\BitBucketSourceCode\edi-soapapiautomation\SoapService\SoapService\obj\Debug\SoapService.pdb
