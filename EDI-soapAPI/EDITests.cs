@@ -119,7 +119,7 @@ namespace EDI_soapAPI
 						//stateName="NJ",
 						stateCode ="NJ",
 						zipCode="07047",
-						legacyAxAccountNumber="TB1234-12341",
+						legacyAxAccountNumber="",
 						invoiceDocuments = new List<object>(),
 						invoiceRequiredFields=new List<object>(),
 						invoiceVerifiedFields=new List<object>(),
@@ -334,7 +334,7 @@ namespace EDI_soapAPI
 					invoiceDocuments = new List<object>(),
 					bolSignature=null,
 					podSignature=null,
-					legacyAxAccountNumber= "TB1234-12341",
+					legacyAxAccountNumber= "",
 					axAccountNumber=null,
 					legacyBillToId=null,
 					increasedCreditAmount=0,
@@ -356,8 +356,7 @@ namespace EDI_soapAPI
 					AUTHENTICATION = new AUTHENTICATION()
 					{
 						USERNAME = ConfigurationManager.AppSettings["EDI_UserName"],
-						PASSWORD = ConfigurationManager.AppSettings["EDI_Password"],
-						//ORG = "229414"
+						PASSWORD = Configurat
 						ORG = _cust.body.id.ToString()
 					}
 				},
@@ -367,14 +366,14 @@ namespace EDI_soapAPI
 					{
 						Customer = new Customer()
 						{
-							//Id = "229414"
+							
 							Id = _cust.body.id.ToString()
 						},
 						CustomerLocation = new SoapService.Entities.CustomerLocation()
 						{
 							CustomerBillAddress = new SoapService.Entities.CustomerBillAddress()
 							{
-								//Id = "86043"
+								
 								Id = _cust.body.billToAddresses[0].id.ToString()
 							}
 						},
@@ -527,58 +526,7 @@ namespace EDI_soapAPI
 
 			} while(load != null) ;
 
-			//for (int n=0; n< expCount; n++ )
-			//{
-			//    loads = loadRest.GetLoadException();
-			//    load = loads.body.ediIssuesDTO.Find(l => l.loadId == Convert.ToInt32(loadId));
-			//	expCount = load.ediExceptionQueueList.Count;
-			//	Assert.log($"EDI Load Exception found: {load.ediExceptionQueueList[n].ediRejectReasonCode.description}");
-			//	switch (load.ediExceptionQueueList[n].ediRejectReasonCode.id)
-			//	{
-			//		case 4:
-			//			updvalue = "146";
-			//			break;
-			//		case 8:
-			//			updvalue = "STOCKTON, CA, 95207, United States of America";
-			//			break;
-			//		case 9:
-			//			updvalue = "STKN, CA, 95215, United States of America";
-			//			break;
-			//		case 6:
-			//			updvalue = "Boxes";
-			//			break;
-			//		case 7:
-			//			updvalue = "137";
-			//			break;
-			//		default:
-			//			updvalue = "";
-			//			break;
-			//	}
 
-				//var exp = loadRest.ClearExceptions(new EDI_soapAPI.Entities.ExceptionEntities.CleExpReq()
-				//{
-				//	loadId = Convert.ToInt32(loadId),
-				//	issues = new List<EDI_soapAPI.Entities.ExceptionEntities.Issue>()
-				//	{
-				//		new EDI_soapAPI.Entities.ExceptionEntities.Issue ()
-				//		{
-				//			ediExceptionId =load.ediExceptionQueueList[n].id,
-				//			issueType =load.ediExceptionQueueList[n].ediRejectReasonCode.id,
-				//			description=load.ediExceptionQueueList[n].ediRejectReasonCode.description,
-				//			updatedValue = updvalue,
-							
-				//			country = new EDI_soapAPI.Entities.ExceptionEntities.Country()
-				//			{
-				//				id="USA",
-				//				name="United States of America"
-				//			}
-				//		}
-				//	}
-
-
-				//});
-				//Assert.AreEqual("200", Convert.ToString(exp.statusCodeValue),$"Cleared exception: {load.ediExceptionQueueList[n].ediRejectReasonCode.description}");
-			//};
 		}
 
 		
